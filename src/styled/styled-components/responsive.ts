@@ -1,5 +1,5 @@
 //
-const sizes = {
+export const sizes = {
   lo: "100px",
   xs: "350px",
   xm: "575.98px",

@@ -1,5 +1,4 @@
 // style
-import "./index.css";
 import { createGlobalStyle } from "styled-components";
 //
 import React from "react";
@@ -16,16 +15,10 @@ import * as serviceWorker from "./serviceWorker";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    background : rgb(255,254,252);
+    background-color : rgb(255,254,252);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    min-height: 100vh;
-    height: auto;
-    min-width: 100vw;
-    max-width: 100vw;
-    width: 100vw;
-    outline: none;
   }
 `;
 
@@ -33,7 +26,7 @@ ReactDOM.render(
   <Provider store={store}>
     <Router>
       <PersistGate persistor={persistor}>
-        <GlobalStyle />
+        <GlobalStyle />>
         <App />
       </PersistGate>
     </Router>
