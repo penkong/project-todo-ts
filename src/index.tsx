@@ -1,35 +1,25 @@
-// style
-import { createGlobalStyle } from "styled-components";
-//
 import React from "react";
 import ReactDOM from "react-dom";
+
 // store and persist store.
+import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { store, persistor } from "./redux";
 // comps utils
 import App from "./App";
-import { BrowserRouter as Router } from "react-router-dom";
-import * as serviceWorker from "./serviceWorker";
+import { GlobalStyle } from "./styled/styled-components/GlobalStyle";
 //
-
-const GlobalStyle = createGlobalStyle`
-  body {
-    background-color : rgb(255,254,252);
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-`;
+import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <Provider store={store}>
-    <Router>
+    <BrowserRouter>
       <PersistGate persistor={persistor}>
-        <GlobalStyle />>
+        <GlobalStyle />
         <App />
       </PersistGate>
-    </Router>
+    </BrowserRouter>
   </Provider>,
   document.getElementById("root")
 );
